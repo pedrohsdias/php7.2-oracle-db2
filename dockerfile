@@ -51,3 +51,4 @@ RUN docker-php-ext-configure oci8 --with-oci8=instantclient,/usr/lib/oracle/12.2
 RUN docker-php-ext-install -j$(nproc) oci8 pgsql pdo pdo_oci pdo_pgsql \
     && docker-php-ext-enable ibm_db2 pdo_ibm xdebug \
     && rm -R /tmp/
+RUN a2enmod rewrite 
