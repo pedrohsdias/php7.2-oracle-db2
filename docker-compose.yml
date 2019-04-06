@@ -1,0 +1,20 @@
+version: "3.2"
+services:
+  php-db2-oracle:
+    image: php:7-db2-oracle
+    volumes:
+      - /d/www/:/var/www/html/
+      - /d/volumes/php-apache/:/etc/apache2/sites-enabled/
+    ports:
+      - "80:80"
+# comando executado dentro da pasta "dockerfile-node-bower"
+# docker build -t node:bower .
+
+# comando executado dentro da pasta "dockerfile-php-com-deps"
+# docker build -t php::7-db2-oracle .
+
+# comando executado dentro da pasta do projeto
+# docker run --rm -it -v $PWD:/app -v $COMPOSER_HOME:/tmp composer:1.8 install --ignore-platform-reqs --no-scripts
+# docker run --rm -it -v $PWD:/app node:bower bower update --allow-root
+
+# docker exec -it ID_DO_CONTAINER_DB2_ORACLE chmod -R 777 /var/www/html/PASTA_PROJETO
